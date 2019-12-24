@@ -23,12 +23,13 @@ user_agent = 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, lik
 headers = { 'User-Agent' : user_agent}
 
 # Change the File Name
-file_name = input("Plese Enter file name:-")
+file_name = input("Please Enter the file name:- ")
+col_name = input("Please Enter the Column Name:- ")
 #df = pd.read_excel('url_index_or_not.xlsx')
 df = pd.read_excel(file_name)
 df_result = pd.DataFrame()
 for i in range(0, len(df)):
-    line = df.loc[i,'links']
+    line = df.loc[i,col_name]
     #print(line)
     if line:
         query = {'q': 'site:' + line}
